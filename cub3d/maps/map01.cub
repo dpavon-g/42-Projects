@@ -1,16 +1,10 @@
-EA ./textures/grey.xpm
 NO ./textures/brick.xpm
 SO ./textures/blue.xpm
-
-F 100,0,100
+EA ./textures/grey.xpm
 WE ./textures/wood.xpm
+
+F 100,0,255
 C 0,0,0
-
-
-
-           
-
-
 
 111111
 100101
