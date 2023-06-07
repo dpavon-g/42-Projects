@@ -3,6 +3,7 @@ NAME := a.out
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 SRCS =	main.cpp\
 		Bureaucrat.cpp\
+		form.cpp\
 		
 OBJS = $(SRCS:.cpp=.o)
 

@@ -7,8 +7,8 @@ int main() {
 	Bureaucrat copyBureau(stackBureau);
 
 	std::cout << "\n---Bureaucrat getters test---" << std::endl;
-	std::cout << heapBureau->get_name() << " grade: " << heapBureau->get_grade() << std::endl;
-	std::cout << stackBureau.get_name() << " grade: " << stackBureau.get_grade() << std::endl;
+	std::cout << "Name: " << heapBureau->get_name() << ", grade: " << heapBureau->get_grade() << std::endl;
+	std::cout << "Name: " << stackBureau.get_name() << ", grade: " << stackBureau.get_grade() << std::endl;
 
 	std::cout << "\n---Bureaucrat good increment and decrement test---" << std::endl;
 	try {
