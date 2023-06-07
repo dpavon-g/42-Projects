@@ -27,6 +27,8 @@ class Form
 		};
 
 		Form();
+		Form(Form &copy);
+		Form(std::string name, int sign_grade, int execute_grade);
 		~Form();
 		std::string get_name() const;
 		bool		get_signed() const;

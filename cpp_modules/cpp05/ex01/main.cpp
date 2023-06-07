@@ -30,15 +30,21 @@ int main() {
 	}
 	
 	std::cout << "\n---Form creation---" << std::endl;
-	Form formulario;
-
+	Form house_form;
+	Form *renta_form = new Form("Hacienda", 40, 30);
+	Form copy_form(*renta_form);
 	std::cout << "\n---Form getters test---" << std::endl;
-	std::cout << "Name: " << formulario.get_name() << ", signed: " << formulario.get_signed() << ", sign grade: " << formulario.get_sign_grade() << ", execution grade: " << formulario.get_execute_grade() << std::endl;
+	std::cout << "Name: " << house_form.get_name() << ", signed: " << house_form.get_signed() << ", sign grade: " << house_form.get_sign_grade() << ", execution grade: " << house_form.get_execute_grade() << std::endl;
+	std::cout << "Name: " << renta_form->get_name() << ", signed: " << renta_form->get_signed() << ", sign grade: " << renta_form->get_sign_grade() << ", execution grade: " << renta_form->get_execute_grade() << std::endl;
+	std::cout << "Name: " << copy_form.get_name() << ", signed: " << copy_form.get_signed() << ", sign grade: " << copy_form.get_sign_grade() << ", execution grade: " << copy_form.get_execute_grade() << std::endl;
 
 
 
 	std::cout << "\n---Bureaucrat destructors test---" << std::endl;
 	delete (heapBureau);
-
-	// system("leaks a.out");
+	
+	std::cout << "\n---Form destructors test---" << std::endl;
+	delete (renta_form);
+	
+	system("leaks a.out");
 }
