@@ -34,7 +34,7 @@ RIGHT = KEY_RIGHT=124
 
 # Propierties for compiling in Linux
 ifeq ($(UNAME), Linux)
-	MLX_LINK = -lmlx -lXext -lX11 -lm
+	MLX_LINK = libmlx/libmlx_Linux.a -lXext -lX11
 	ESC = KEY_ESC=65307
 	W = KEY_W=119
 	A = KEY_A=97
@@ -81,7 +81,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(MAKE) -s all -C libft
-	@$(CC) $(CFLAGS) $(OBJS) $(MLX_LINK) libft/libft.a -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(MLX_LINK) libft/libft.a -o $(NAME) -lm
 	@echo "$(GREY) cub3d compiled $(GREEN) ✔✔✔ $(NO_COLOR)"
 
 test: all

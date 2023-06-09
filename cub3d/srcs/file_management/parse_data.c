@@ -61,12 +61,12 @@ int	parse_data(char **info, t_data *data)
 {
 	int		i;
 	int		err;
-	char	**aux;
+	// char	**aux; Borrar
 	char	**info_ptr;
 
 	i = -1;
 	err = 0;
-	aux = NULL;
+	// aux = NULL; Borrar
 	info_ptr = info;
 	while (info[++i])
 	{

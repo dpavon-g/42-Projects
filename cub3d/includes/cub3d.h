@@ -15,7 +15,7 @@
 
 # include "../libft/libft.h"
 # include "keycodes.h"
-# include <mlx.h>
+# include "mlx.h"
 # include <stdio.h>
 # include <sys/types.h>
 # include <fcntl.h>
