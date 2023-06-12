@@ -35,7 +35,7 @@ clean:
 	@echo "\033[0;33mCleaning executable\033[0m"
 
 fclean: clean
-	@rm $(OBJS)
+	@rm $(OBJS) *_Shrubbery
 	@echo "\033[0;35mFclean done\033[0m"
 
 re: fclean all
