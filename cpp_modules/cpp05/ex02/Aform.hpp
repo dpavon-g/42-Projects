@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
+# include <fstream>
+# include <cstdlib>
+# include <ctime> 
 
 class Bureaucrat;
 
@@ -18,26 +21,34 @@ class Form
 		class GradeTooHighException: public std::exception {
 		public:
     		const char* what() const throw() {
-       			return "Error. Bureaucrat grade is too high!!";
+       			return "Error. Form grade is too high!!";
    			}
 		};
 
 		class GradeTooLowException: public std::exception {
 		public:
     		const char* what() const throw() {
-       			return "Error. Bureaucrat grade is too low!!";
+       			return "Error. Form grade is too low!!";
+   			}
+		};
+
+		class NotSignedException: public std::exception {
+		public:
+    		const char* what() const throw() {
+       			return "Error. Form not signed!!";
    			}
 		};
 
 		Form();
-		Form(Form &copy);
+		Form(const Form &copy);
 		Form(std::string name, int sign_grade, int execute_grade);
-		~Form();
+		virtual ~Form();
 		std::string get_name() const;
 		bool		get_signed() const;
 		int			get_sign_grade() const;
 		int			get_execute_grade() const;
-		bool		beSigned(const Bureaucrat &b);
+		void		beSigned(const Bureaucrat &b);
+		virtual void		execute(Bureaucrat const &executor) const = 0;
 		Form		&operator=(const Form &copy);
 		friend std::ostream& operator<<(std::ostream& os, const Form& form);
 

@@ -47,6 +47,25 @@ void	Bureaucrat::decrement_grade(int value) {
 		throw Bureaucrat::GradeTooLowException();
 }
 
+void	Bureaucrat::signForm(Form &f) {
+	try {
+		f.beSigned(*this);
+		std::cout << "<" << this->get_name() << "> signed <" << f.get_name() << ">" << std::endl;
+	} catch (Form::GradeTooHighException& ex) {
+		std::cout << "<" << this->get_name() << "> couldn't sign <" << f.get_name() << "> because <" << ex.what() << std::endl; 
+	}
+}
+
+void	Bureaucrat::executeForm(Form const &form){
+	try {
+		form.execute(*this);
+	} catch (Form::NotSignedException) {
+		std::cout << "Form not signed!" << std::endl;
+	} catch (Form::GradeTooLowException) {
+		std::cout << "Not enough grade to execute it!" << std::endl;
+	}
+}
+
 // Operators overload
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureau) {
