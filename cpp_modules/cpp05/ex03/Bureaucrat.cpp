@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
-
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 // Constructors
 
@@ -51,7 +53,7 @@ void	Bureaucrat::signForm(Form &f) {
 	try {
 		f.beSigned(*this);
 		std::cout << "<" << this->get_name() << "> signed <" << f.get_name() << ">" << std::endl;
-	} catch (Form::GradeTooHighException& ex) {
+	} catch (Form::GradeTooLowException& ex) {
 		std::cout << "<" << this->get_name() << "> couldn't sign <" << f.get_name() << "> because <" << ex.what() << std::endl; 
 	}
 }

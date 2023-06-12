@@ -16,8 +16,13 @@ std::string PresidentialPardonForm::getTarget() const {
 	return (this->_target);
 }
 
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &form) {
+	this->_target = form.getTarget();
+	Form::operator=(form);
+    return *this;
+}
+
 void		PresidentialPardonForm::execute(Bureaucrat const &executor) const {
-	//<target> has been pardoned by Zaphod Beeblebrox.
 	if (this->get_signed() == false)
 		throw (Form::NotSignedException());
 	else {
