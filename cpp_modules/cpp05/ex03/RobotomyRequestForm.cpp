@@ -16,12 +16,6 @@ std::string RobotomyRequestForm::getTarget() const {
     return (this->_target);
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &form) {
-    this->_target = form.getTarget();
-	Form::operator=(form);
-    return *this;
-}
-
 void		RobotomyRequestForm::execute(Bureaucrat const &executor) const {
     if (this->get_signed() == false)
 		throw (Form::NotSignedException());

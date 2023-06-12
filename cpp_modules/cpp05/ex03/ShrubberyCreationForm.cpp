@@ -16,12 +16,6 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return (this->_target);
 }
 
-ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &form) {
-	this->_target = form.getTarget();
-	Form::operator=(form);
-    return *this;
-}
-
 void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	if (this->get_signed() == false)
 		throw (Form::NotSignedException());

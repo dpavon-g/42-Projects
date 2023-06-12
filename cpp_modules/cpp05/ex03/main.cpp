@@ -8,8 +8,8 @@ int main() {
 	Bureaucrat pepe("Pepe", 1);
 	ShrubberyCreationForm form("House");
 	RobotomyRequestForm form1("Robot");
-	PresidentialPardonForm form2("Presidential");
-
+	PresidentialPardonForm form2("Robot");
+	
 	std::cout << "\n---ShrubberyCreationForm test---" << std::endl;
 	try {
 		pepe.signForm(form);
