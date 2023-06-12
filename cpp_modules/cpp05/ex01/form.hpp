@@ -2,6 +2,9 @@
 # define FORM_HPP
 
 # include <iostream>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form 
 {
@@ -22,7 +25,7 @@ class Form
 		class GradeTooLowException: public std::exception {
 		public:
     		const char* what() const throw() {
-       			return "Error. Bureaucrat grade is too high!!";
+       			return "Error. Bureaucrat grade is too low!!";
    			}
 		};
 
@@ -34,6 +37,10 @@ class Form
 		bool		get_signed() const;
 		int			get_sign_grade() const;
 		int			get_execute_grade() const;
+		bool		beSigned(const Bureaucrat &b);
+		Form		&operator=(const Form &copy);
+		friend std::ostream& operator<<(std::ostream& os, const Form& form);
+
 };
 
 #endif
