@@ -58,11 +58,9 @@ std::string intToDouble(int number, int decimalDigits) {
 bool isInRange(const std::string& numberString) {
   char* endPtr;
   long int number = strtol(numberString.c_str(), &endPtr, 10);
-  
   if (*endPtr != '\0') {
     return false;
   }
-  
   return (number >= std::numeric_limits<int>::min() && 
           number <= std::numeric_limits<int>::max());
 }

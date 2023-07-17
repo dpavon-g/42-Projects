@@ -1,5 +1,5 @@
 CXX := g++
-NAME := a.out
+NAME := converter
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 SRCS =	main.cpp\
 		convert.cpp\
