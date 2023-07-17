@@ -79,28 +79,36 @@ int floatToInt(float number) {
 }
 
 int	argument_type(const std::string &arg) {
-    std::cout << floatToInt(4.9123412345f) << std::endl;
     if (!is_char(arg)) {
         if (is_valid(arg, "-0123456789.f")) {
-            if (is_valid(arg, ".")) {
-                std::cout << "Es float o double" << std::endl;
+            if (is_valid(".f", arg)) {
+                std::cout << "Es float" << std::endl;
+            }
+            else if (is_valid(".", arg)) {
+                std::cout << "Es double" << std::endl;
             }
             else {
                 if (isInRange(arg)) {
                     print_values(intToChar(atoi(arg)), arg, intToFloat(atoi(arg), 1), intToDouble(atoi(arg), 1));
                 }
                 else {
+                    std::cout << arg << std::endl;
                     std::cout << "El numero no esta en rango" << std::endl;
                 }
             }
         }
         else {
-            print_values("imposible", "imposible", "nanf", "nan");
+            if (arg == "inf" || arg == "-inf" || arg == "nan")
+                print_values("impossible", "imposible", arg + "f", arg);
+            else if (arg == "inff" || arg == "-inf" || arg == "nanf")
+                print_values("impossible", "impossible", arg, arg.substr(0, arg.size() - 1));
+            else
+                print_values("impossible", "impossible", "nanf", "nan");
         }
     }
     else {
         if ((arg[0] >= 0 && arg[0] <= 31) || arg[0] == 127) 
-            print_values("imposible", "imposible", "nanf", "nan");
+            print_values("impossible", "impossible", "nanf", "nan");
         else {
             int toInt = arg[0];
             std::string toFloat = intToFloat(toInt, 1);
