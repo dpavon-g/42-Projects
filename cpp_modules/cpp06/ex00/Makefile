@@ -2,7 +2,7 @@ CXX := g++
 NAME := converter
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 SRCS =	main.cpp\
-		convert.cpp\
+		Convert.cpp\
 		
 OBJS = $(SRCS:.cpp=.o)
 
