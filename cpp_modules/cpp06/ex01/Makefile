@@ -2,7 +2,7 @@ CXX := g++
 NAME := serial
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 SRCS =	main.cpp\
-		serialize.cpp\
+		Serializer.cpp\
 		
 OBJS = $(SRCS:.cpp=.o)
 

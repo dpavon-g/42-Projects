@@ -1,18 +1,6 @@
-#include "serialize.hpp"
+#include "Base.hpp"
+#include <iostream>
 
-serialize::serialize() {
-    std::cout << "Default constructor called" << std::endl;
-}
-
-serialize::~serialize() {
+Base::~Base() {
     std::cout << "Default destructor called" << std::endl;
 }
-
-void* serialize::serial(Data *ptr) {
-    return static_cast<void*>(ptr);
-}
-
-Data* serialize::deserial(void* raw) {
-    return static_cast<Data*>(raw);
-}
-

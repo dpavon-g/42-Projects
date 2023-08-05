@@ -1,15 +1,17 @@
-#include "serialize.hpp"
+#include "Serializer.hpp"
 
 int main() {
-    Data data;
-    data.value = 42;
-    data.character = 'A';
+    Data *data = new Data;
+    data->character = 'A';
+    data->value = 42;
+    Serializer mySerial;
 
-    serialize mySerial;
-    void* serializedData = mySerial.serial(&data);
-    Data* deserializedData = mySerial.deserial(serializedData);
+    std::cout << "data: " << data << std::endl;
+    std::cout << "data_value: " << data->value << std::endl;
+    
+    uintptr_t point = mySerial.serialize(data);
+    Data *dataSerialized = mySerial.deserialize(point);
 
-    std::cout << "Value: " << deserializedData->value << std::endl;
-    std::cout << "Character: " << deserializedData->character << std::endl;
-    (void)deserializedData;
+    std::cout << "dataSerialized: " << dataSerialized << std::endl;
+    std::cout << "dataSerialized_value: " << dataSerialized->value << std::endl;
 }
