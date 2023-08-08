@@ -2,7 +2,6 @@ CXX := g++
 NAME := a.out
 CXXFLAGS := -Wall -Werror -Wextra -std=c++98
 SRCS =	main.cpp\
-		Array.cpp\
 		
 OBJS = $(SRCS:.cpp=.o)
 
