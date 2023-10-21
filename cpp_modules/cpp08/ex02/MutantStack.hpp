@@ -20,7 +20,7 @@ template<typename T>
 MutantStack<T> &MutantStack<T>::operator=(MutantStack const &rhs){
     std::cout << "Assignation operator called" << std::endl;
     if (this != &rhs)
-        this.c = rhs.c;
+        this->c = rhs.c;
     return (*this);
 }
 

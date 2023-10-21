@@ -2,7 +2,7 @@
 
 
 Span::Span(unsigned int n): _maxIntegers(n) {
-    std::cout << "Number <Span> constructor called" << std::endl;
+    std::cout << "Number <" << n << "> Span constructor called" << std::endl;
 }
 
 Span::Span(): _maxIntegers(0) {
@@ -39,8 +39,8 @@ int		Span::shortestSpan() {
 	std::vector<int> tmp(_vec.size());
 	std::copy(_vec.begin(), _vec.end(), tmp.begin());
 	std::sort(tmp.begin(), tmp.end());
-    int i = 0;
-    while (i < (int)tmp.size() - 1) {
+    int i = 1;
+    while (i < (int)tmp.size()) {
         diff = tmp[i] - tmp[i - 1];
 		if (diff && diff < span)
 			span = diff;

@@ -1,9 +1,9 @@
 #include "Span.hpp"
 
-int main(void) {
+int myMain(void) {
     Span mySpan(5);
     
-    std::cout << "--- Add number test ---" << std::endl;
+    std::cout << "--- Add 10 number test ---" << std::endl;
     int i = 0;
     while (i < 10) {
         try {
@@ -104,16 +104,29 @@ int main(void) {
     newVector.addRange(array, array + 5);
     std::cout << "--- Getting numbers ---" << std::endl;
     newVector.getNumbers();
+
+    return 0;
 }
 
-// int main()
-// {
-//     Span sp = Span(5);
-//     sp.addNumber(6);
-//     sp.addNumber(3);
-//     sp.addNumber(17);
-//     sp.addNumber(9);
-//     sp.addNumber(11);
-//     std::cout << sp.shortestSpan() << std::endl;
-//     std::cout << sp.longestSpan() << std::endl;
-// }
+int exMain()
+{
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+
+    return 0;
+}
+
+int main() {
+    std::cout << "--- My Main ---" << std::endl;
+    myMain();
+    std::cout << "\n\n--- 42 Main ---" << std::endl;
+    exMain();
+    return 0;
+}
+
